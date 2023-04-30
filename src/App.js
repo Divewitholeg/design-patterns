@@ -5,6 +5,7 @@ import { LargePersonListItem } from "./people/LargePersonListItem";
 import { NumberedList } from "./NumberedList";
 import { SmallProductListItem } from "./products/SmallProductListItem";
 import { LargeProductListItem } from "./products/LargeProductListItem";
+import { Modal } from "./Modal";
 
 // const LeftHandSide = ({ name }) => {
 //   return <div style={{ backgroundColor: "fuchsia" }}>{name}</div>;
@@ -65,7 +66,7 @@ function App() {
         // <RightHandSide message={"Hi from the right!"} />
         //{" "}
       </SplitScreen> */}
-      <RegularList
+      {/* <RegularList
         items={people}
         resourceName={"person"}
         itemComponent={SmallPersonListItem}
@@ -79,12 +80,10 @@ function App() {
         items={products}
         resourceName={"product"}
         itemComponent={SmallProductListItem}
-      />
-      <NumberedList
-        items={products}
-        resourceName={"product"}
-        itemComponent={LargeProductListItem}
-      />
+      /> */}
+      <Modal>
+        <LargeProductListItem product={products[0]} />
+      </Modal>
     </>
   );
 }
