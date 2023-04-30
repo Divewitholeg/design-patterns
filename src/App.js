@@ -2,6 +2,9 @@ import { RegularList } from "./RegularList";
 //import { SplitScreen } from "./SplitScreen";
 import { SmallPersonListItem } from "./people/SmallPersonListItem";
 import { LargePersonListItem } from "./people/LargePersonListItem";
+import { NumberedList } from "./NumberedList";
+import { SmallProductListItem } from "./products/SmallProductListItem";
+import { LargeProductListItem } from "./products/LargeProductListItem";
 
 // const LeftHandSide = ({ name }) => {
 //   return <div style={{ backgroundColor: "fuchsia" }}>{name}</div>;
@@ -71,6 +74,16 @@ function App() {
         items={people}
         resourceName={"person"}
         itemComponent={LargePersonListItem}
+      />
+      <NumberedList
+        items={products}
+        resourceName={"product"}
+        itemComponent={SmallProductListItem}
+      />
+      <NumberedList
+        items={products}
+        resourceName={"product"}
+        itemComponent={LargeProductListItem}
       />
     </>
   );
