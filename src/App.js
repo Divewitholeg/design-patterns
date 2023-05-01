@@ -8,7 +8,8 @@
 // import { Modal } from "./Modal";
 // import { CurrentUserLoader } from "./CurrentUserLoader";
 // import { UserLoader } from "./UserLoader";
-import { ResourceLoader } from "./ResourceLoader";
+// import { ResourceLoader } from "./ResourceLoader";
+import { DataSource } from "./DataSource";
 import { ProductInfo } from "./ProductInfo";
 import { UserInfo } from "./UserInfo";
 
@@ -63,6 +64,18 @@ import { UserInfo } from "./UserInfo";
 // ];
 
 function App() {
+  const getServerData = (url) => async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  };
+
+  const getLocalStorageData = (key) => () => {
+    return localStorage.getItem(key);
+  };
+
+  const Text = ({ message }) => <h1>{message}</h1>;
+
   return (
     <>
       {/* //{" "}
@@ -95,12 +108,27 @@ function App() {
       {/* <UserLoader userId={"123"}>
         <UserInfo />
       </UserLoader> */}
-      <ResourceLoader resourceURL="/products/1234" resourceName="product">
+      {/* <ResourceLoader resourceURL="/products/1234" resourceName="product">
         <ProductInfo />
       </ResourceLoader>
       <ResourceLoader resourceURL="/users/123" resourceName="user">
         <UserInfo />
-      </ResourceLoader>
+      </ResourceLoader> */}
+      <DataSource
+        getDataFunc={getServerData("/products/1234")}
+        resourceName="product"
+      >
+        <ProductInfo />
+      </DataSource>
+      <DataSource getDataFunc={getServerData("/users/123")} resourceName="user">
+        <UserInfo />
+      </DataSource>
+      <DataSource
+        getDataFunc={getLocalStorageData("message")}
+        resourceName="message"
+      >
+        <Text />
+      </DataSource>
     </>
   );
 }
