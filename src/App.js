@@ -6,7 +6,10 @@
 // import { SmallProductListItem } from "./products/SmallProductListItem";
 // import { LargeProductListItem } from "./products/LargeProductListItem";
 // import { Modal } from "./Modal";
-import { CurrentUserLoader } from "./CurrentUserLoader";
+// import { CurrentUserLoader } from "./CurrentUserLoader";
+// import { UserLoader } from "./UserLoader";
+import { ResourceLoader } from "./ResourceLoader";
+import { ProductInfo } from "./ProductInfo";
 import { UserInfo } from "./UserInfo";
 
 // const LeftHandSide = ({ name }) => {
@@ -86,9 +89,18 @@ function App() {
       {/* <Modal>
         <LargeProductListItem product={products[0]} />
       </Modal> */}
-      <CurrentUserLoader>
+      {/* <CurrentUserLoader>
         <UserInfo />
-      </CurrentUserLoader>
+      </CurrentUserLoader> */}
+      {/* <UserLoader userId={"123"}>
+        <UserInfo />
+      </UserLoader> */}
+      <ResourceLoader resourceURL="/products/1234" resourceName="product">
+        <ProductInfo />
+      </ResourceLoader>
+      <ResourceLoader resourceURL="/users/123" resourceName="user">
+        <UserInfo />
+      </ResourceLoader>
     </>
   );
 }
