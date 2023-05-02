@@ -14,8 +14,9 @@
 // import { UserInfo } from "./UserInfo";
 // import { UncontrolledForm } from "./UncontrolledForm";
 // import { ControlledForm } from "./ControlledForm";
-import { useState } from "react";
-import { ControlledModal } from "./ControlledModal";
+// import { useState } from "react";
+// import { ControlledModal } from "./ControlledModal";
+import { UncontrolledOnboardingFlow } from "./UncontrolledOnboardingFlow";
 
 // const LeftHandSide = ({ name }) => {
 //   return <div style={{ backgroundColor: "fuchsia" }}>{name}</div>;
@@ -79,7 +80,25 @@ function App() {
   // };
 
   // const Text = ({ message }) => <h1>{message}</h1>;
-  const [shouldShowModal, setShouldShowModal] = useState(false);
+  // const [shouldShowModal, setShouldShowModal] = useState(false);
+  const StepOne = ({ goToNext }) => (
+    <>
+      <h1>Step 1</h1>
+      <button onClick={() => goToNext({ name: "John Doe" })}>Next</button>
+    </>
+  );
+  const StepTwo = ({ goToNext }) => (
+    <>
+      <h1>Step 2</h1>
+      <button onClick={() => goToNext({ age: 100 })}>Next</button>
+    </>
+  );
+  const StepThree = ({ goToNext }) => (
+    <>
+      <h1>Step 3</h1>
+      <button onClick={() => goToNext({ hairColor: "brown" })}>Next</button>
+    </>
+  );
 
   return (
     <>
@@ -136,7 +155,7 @@ function App() {
       </DataSource> */}
       {/* <UncontrolledForm /> */}
       {/* <ControlledForm /> */}
-      <ControlledModal
+      {/* <ControlledModal
         shouldShow={shouldShowModal}
         onRequestClose={() => setShouldShowModal(false)}
       >
@@ -144,7 +163,17 @@ function App() {
       </ControlledModal>
       <button onClick={() => setShouldShowModal(!shouldShowModal)}>
         {shouldShowModal ? "Hide Modal" : "Show Modal"}
-      </button>
+      </button> */}
+      <UncontrolledOnboardingFlow
+        onFinish={(data) => {
+          console.log(data);
+          alert("Onboarding complete!");
+        }}
+      >
+        <StepOne />
+        <StepTwo />
+        <StepThree />
+      </UncontrolledOnboardingFlow>
     </>
   );
 }
