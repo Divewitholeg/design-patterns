@@ -13,7 +13,9 @@
 // import { ProductInfo } from "./ProductInfo";
 // import { UserInfo } from "./UserInfo";
 // import { UncontrolledForm } from "./UncontrolledForm";
-import { ControlledForm } from "./ControlledForm";
+// import { ControlledForm } from "./ControlledForm";
+import { useState } from "react";
+import { ControlledModal } from "./ControlledModal";
 
 // const LeftHandSide = ({ name }) => {
 //   return <div style={{ backgroundColor: "fuchsia" }}>{name}</div>;
@@ -77,6 +79,7 @@ function App() {
   // };
 
   // const Text = ({ message }) => <h1>{message}</h1>;
+  const [shouldShowModal, setShouldShowModal] = useState(false);
 
   return (
     <>
@@ -132,7 +135,16 @@ function App() {
         <Text />
       </DataSource> */}
       {/* <UncontrolledForm /> */}
-      <ControlledForm />
+      {/* <ControlledForm /> */}
+      <ControlledModal
+        shouldShow={shouldShowModal}
+        onRequestClose={() => setShouldShowModal(false)}
+      >
+        <h1>Hi from the modal!</h1>
+      </ControlledModal>
+      <button onClick={() => setShouldShowModal(!shouldShowModal)}>
+        {shouldShowModal ? "Hide Modal" : "Show Modal"}
+      </button>
     </>
   );
 }
