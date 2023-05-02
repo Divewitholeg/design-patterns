@@ -9,9 +9,11 @@
 // import { CurrentUserLoader } from "./CurrentUserLoader";
 // import { UserLoader } from "./UserLoader";
 // import { ResourceLoader } from "./ResourceLoader";
-import { DataSource } from "./DataSource";
-import { ProductInfo } from "./ProductInfo";
-import { UserInfo } from "./UserInfo";
+// import { DataSource } from "./DataSource";
+// import { ProductInfo } from "./ProductInfo";
+// import { UserInfo } from "./UserInfo";
+// import { UncontrolledForm } from "./UncontrolledForm";
+import { ControlledForm } from "./ControlledForm";
 
 // const LeftHandSide = ({ name }) => {
 //   return <div style={{ backgroundColor: "fuchsia" }}>{name}</div>;
@@ -64,17 +66,17 @@ import { UserInfo } from "./UserInfo";
 // ];
 
 function App() {
-  const getServerData = (url) => async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  };
+  // const getServerData = (url) => async () => {
+  //   const response = await fetch(url);
+  //   const data = await response.json();
+  //   return data;
+  // };
 
-  const getLocalStorageData = (key) => () => {
-    return localStorage.getItem(key);
-  };
+  // const getLocalStorageData = (key) => () => {
+  //   return localStorage.getItem(key);
+  // };
 
-  const Text = ({ message }) => <h1>{message}</h1>;
+  // const Text = ({ message }) => <h1>{message}</h1>;
 
   return (
     <>
@@ -114,7 +116,7 @@ function App() {
       <ResourceLoader resourceURL="/users/123" resourceName="user">
         <UserInfo />
       </ResourceLoader> */}
-      <DataSource
+      {/* <DataSource
         getDataFunc={getServerData("/products/1234")}
         resourceName="product"
       >
@@ -128,7 +130,9 @@ function App() {
         resourceName="message"
       >
         <Text />
-      </DataSource>
+      </DataSource> */}
+      {/* <UncontrolledForm /> */}
+      <ControlledForm />
     </>
   );
 }
