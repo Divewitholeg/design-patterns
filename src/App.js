@@ -11,7 +11,7 @@
 // import { ResourceLoader } from "./ResourceLoader";
 // import { DataSource } from "./DataSource";
 // import { ProductInfo } from "./ProductInfo";
-import { UserInfo } from "./UserInfo";
+// import { UserInfo } from "./UserInfo";
 // import { UncontrolledForm } from "./UncontrolledForm";
 // import { ControlledForm } from "./ControlledForm";
 // import { useState } from "react";
@@ -20,7 +20,8 @@ import { UserInfo } from "./UserInfo";
 // import { useState } from "react";
 // import { ControlledOnboardingFlow } from "./ControlledOnboardingFlow";
 // import { printProps } from "./printProps";
-import { withUser } from "./withUser";
+// import { withUser } from "./withUser";
+import { UserInfoForm } from "./UserInfoForm";
 
 // const LeftHandSide = ({ name }) => {
 //   return <div style={{ backgroundColor: "fuchsia" }}>{name}</div>;
@@ -97,7 +98,7 @@ import { withUser } from "./withUser";
 //   </>
 // );
 // const UserInfoWrapped = printProps(UserInfo);
-const UserInfoWithLoader = withUser(UserInfo, "123");
+// const UserInfoWithLoader = withUser(UserInfo, "123");
 
 function App() {
   // const [onboardingData, setOnboardingData] = useState({});
@@ -219,7 +220,8 @@ function App() {
         <StepFour />
       </ControlledOnboardingFlow> */}
       {/* <UserInfoWrapped a={1} b={2} c={3} /> */}
-      <UserInfoWithLoader />
+      {/* <UserInfoWithLoader /> */}
+      <UserInfoForm />
     </>
   );
 }
