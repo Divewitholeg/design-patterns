@@ -19,7 +19,8 @@ import { UserInfo } from "./UserInfo";
 // import { UncontrolledOnboardingFlow } from "./UncontrolledOnboardingFlow";
 // import { useState } from "react";
 // import { ControlledOnboardingFlow } from "./ControlledOnboardingFlow";
-import { printProps } from "./printProps";
+// import { printProps } from "./printProps";
+import { withUser } from "./withUser";
 
 // const LeftHandSide = ({ name }) => {
 //   return <div style={{ backgroundColor: "fuchsia" }}>{name}</div>;
@@ -95,7 +96,8 @@ import { printProps } from "./printProps";
 //     <button onClick={() => goToNext({ hairColor: "brown" })}>Next</button>
 //   </>
 // );
-const UserInfoWrapped = printProps(UserInfo);
+// const UserInfoWrapped = printProps(UserInfo);
+const UserInfoWithLoader = withUser(UserInfo, "123");
 
 function App() {
   // const [onboardingData, setOnboardingData] = useState({});
@@ -216,7 +218,8 @@ function App() {
         {onboardingData.age >= 62 && <StepThree />}
         <StepFour />
       </ControlledOnboardingFlow> */}
-      <UserInfoWrapped a={1} b={2} c={3} />
+      {/* <UserInfoWrapped a={1} b={2} c={3} /> */}
+      <UserInfoWithLoader />
     </>
   );
 }
