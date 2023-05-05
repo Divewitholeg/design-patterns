@@ -23,6 +23,7 @@
 // import { withUser } from "./withUser";
 // import { UserInfoForm } from "./UserInfoForm";
 import { UserInfoCustomHook } from "./UserInfoCustomHook";
+import { ProductInfoCustomHook } from "./ProductInfoCustomHook";
 
 // const LeftHandSide = ({ name }) => {
 //   return <div style={{ backgroundColor: "fuchsia" }}>{name}</div>;
@@ -225,6 +226,7 @@ function App() {
       {/* <UserInfoForm /> */}
       <UserInfoCustomHook userId="123" />
       <UserInfoCustomHook userId="345" />
+      <ProductInfoCustomHook productId="1234" />
     </>
   );
 }
