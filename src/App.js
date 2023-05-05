@@ -25,7 +25,7 @@
 // import { UserInfoCustomHook } from "./UserInfoCustomHook";
 // import { ProductInfoCustomHook } from "./ProductInfoCustomHook";
 // import { RecursiveComponent } from "./RecursiveComponent";
-import { DangerButton, BigSuccessButton } from "./composition";
+import { DangerButton, BigSuccessButton } from "./partiallyApply";
 // const LeftHandSide = ({ name }) => {
 //   return <div style={{ backgroundColor: "fuchsia" }}>{name}</div>;
 // };
