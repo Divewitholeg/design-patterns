@@ -21,7 +21,8 @@
 // import { ControlledOnboardingFlow } from "./ControlledOnboardingFlow";
 // import { printProps } from "./printProps";
 // import { withUser } from "./withUser";
-import { UserInfoForm } from "./UserInfoForm";
+// import { UserInfoForm } from "./UserInfoForm";
+import { UserInfoCustomHook } from "./UserInfoCustomHook";
 
 // const LeftHandSide = ({ name }) => {
 //   return <div style={{ backgroundColor: "fuchsia" }}>{name}</div>;
@@ -221,7 +222,8 @@ function App() {
       </ControlledOnboardingFlow> */}
       {/* <UserInfoWrapped a={1} b={2} c={3} /> */}
       {/* <UserInfoWithLoader /> */}
-      <UserInfoForm />
+      {/* <UserInfoForm /> */}
+      <UserInfoCustomHook />
     </>
   );
 }
