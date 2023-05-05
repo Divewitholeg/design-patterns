@@ -223,7 +223,8 @@ function App() {
       {/* <UserInfoWrapped a={1} b={2} c={3} /> */}
       {/* <UserInfoWithLoader /> */}
       {/* <UserInfoForm /> */}
-      <UserInfoCustomHook />
+      <UserInfoCustomHook userId="123" />
+      <UserInfoCustomHook userId="345" />
     </>
   );
 }
