@@ -24,8 +24,8 @@
 // import { UserInfoForm } from "./UserInfoForm";
 // import { UserInfoCustomHook } from "./UserInfoCustomHook";
 // import { ProductInfoCustomHook } from "./ProductInfoCustomHook";
-import { RecursiveComponent } from "./RecursiveComponent";
-
+// import { RecursiveComponent } from "./RecursiveComponent";
+import { DangerButton, BigSuccessButton } from "./composition";
 // const LeftHandSide = ({ name }) => {
 //   return <div style={{ backgroundColor: "fuchsia" }}>{name}</div>;
 // };
@@ -102,27 +102,27 @@ import { RecursiveComponent } from "./RecursiveComponent";
 // );
 // const UserInfoWrapped = printProps(UserInfo);
 // const UserInfoWithLoader = withUser(UserInfo, "123");
-const nestedObject = {
-  a: 1,
-  b: {
-    b1: 4,
-    b2: {
-      b23: "Hello",
-    },
-    b3: {
-      b31: {
-        message: "Hi",
-      },
-      b32: {
-        message: "Hi",
-      },
-    },
-  },
-  c: {
-    c1: 2,
-    c2: 3,
-  },
-};
+// const nestedObject = {
+//   a: 1,
+//   b: {
+//     b1: 4,
+//     b2: {
+//       b23: "Hello",
+//     },
+//     b3: {
+//       b31: {
+//         message: "Hi",
+//       },
+//       b32: {
+//         message: "Hi",
+//       },
+//     },
+//   },
+//   c: {
+//     c1: 2,
+//     c2: 3,
+//   },
+// };
 
 function App() {
   // const [onboardingData, setOnboardingData] = useState({});
@@ -249,7 +249,9 @@ function App() {
       {/* <UserInfoCustomHook userId="123" />
       <UserInfoCustomHook userId="345" />
       <ProductInfoCustomHook productId="1234" /> */}
-      <RecursiveComponent data={nestedObject} />
+      {/* <RecursiveComponent data={nestedObject} /> */}
+      <DangerButton text="Don't push!!!" />
+      <BigSuccessButton text="Go ahead!" />
     </>
   );
 }
